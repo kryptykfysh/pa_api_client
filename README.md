@@ -1,9 +1,6 @@
 # PaApiClient
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pa_api_client`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
+A Ruby wrapper for the Parallels APIs exposed by both POA and PBA.
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +19,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The two classes PaApiClient::POA and PaApiClient::PBA both require a :host
+parameter in their ::new hash.
+
+### POA
+
+POA calls are made using POA#call, with the first argument being the method
+name, as a String, (e.g. 'pem.getAccountSubscriptions') and the second argument
+being a Hash of parameters (e.g. account_id: 1000001).
+
+### PBA
+
+PBA calls are made using PBA#call, with the first argument being the method
+name, as a String (e.g. 'GetLoginSettings_API') and the second argument being
+an Array of paramters (e.g. [1000002])
+
+In the case of an error, the response will be a Base64 decoded.
 
 ## Development
 

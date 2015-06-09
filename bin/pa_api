@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'pa_api_client'
+
